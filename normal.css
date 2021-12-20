@@ -1,0 +1,39 @@
+/* 剪切图片 */
+.backgrounsize {
+    width: 40px;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
+/* 苹果刘海安全距离 
+    注意事项：而env()和constant()函数有个必要的使用前提，H5网页设置viewport-fit=cover的时候才生效，小程序里的viewport-fit默认是cover。
+    参考： https://www.cnblogs.com/djjlovedjj/p/13983852.html
+*/
+
+.ios-safe {
+    top: 114px;
+    top: calc(constant(safe-area-inset-top) + 114px) !important; /*兼容 IOS<11.2*/ 
+    top: calc(env(safe-area-inset-top) + 114px) !important; /*IOS>11.2*/
+    height: calc(100vh - constant(safe-area-inset-top) - 114px) !important;
+    height: calc(100vh - env(safe-area-inset-top) - 114px) !important;
+}
+
+/* ios 版本小于 11 怎么操作 */
+/* not 表示不支持括号内的属性 */
+@supports not(constant(safe-area-inset-bottom)){
+    page{
+        padding-bottom: 150rpx;
+    }
+}
+
+/* 边距重叠
+1.浮动元素、inline-block 元素、绝对定位元素的 margin 不会和垂直方向上其他元素的 margin 折叠（注意这里指的是上下相邻的元素）
+
+2.外层元素padding代替
+
+3.内层元素透明边框 border:1px solid transparent;
+
+4.用同一方向的margin，都设置为top或者bottom */

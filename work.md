@@ -12,6 +12,9 @@ xiaojiuzitest
 xiaojiuzi123
 
 进销存
+免费版账号：
+17771779999  hh123456
+16638939915  czq123456
 
 15369462534
 Qinsi1234.
@@ -39,7 +42,7 @@ qzl123456
 
 vip 吊牌 打包测试
 启动页上传打包测试
-
+```js
 下载图片: pictureModalDownload
 
 货号\名称\条码
@@ -71,11 +74,11 @@ $scope.showGoodImage = function (url)
 
 getCompressPicture 
 
-
+```
 
 \\172.16.10.4\共享测试包\陈泽锋分支-秦丝进销存
 
-
+```js
 // 多图分享
             $scope.wechatShareImgs
 socialsharing
@@ -111,10 +114,10 @@ vip 版本:
 商品图片大图预览： showTmsShopPhotoAlbumGalleryPictureModal
 
 ‘销售单/销售退货单/采购单/采购退货单/盘点单/库存调拨单 查看原图 
-
+```
 vip 报表功能：原生表格
 
-
+```js
 10.11: 解决bug dev-
 
 bubble 逻辑： 
@@ -329,59 +332,60 @@ bubble 逻辑：
             //     // $event.stopImmediatePropagation()
             // })
 
+```
+# 表格组件：
+- 描述: 在通过transform虚拟滚动的情境下，需要能在移动端app进行展示的表格，特殊要求有要求表格表头、数据第一列进行固定。
+- 实现：参照 element-ui 实现，表头<thread>与 <tbody>进行滚动分离实现表头的固定。使用一个长度为一列宽度的表格在<tbody>横向滚动时显示并显示 box-shadow 阴影，实现数据第一列固定
+- 优化: 减少 dom 查询 复用查询节点。
 
-表格组件：
-描述: 在通过transform虚拟滚动的情境下，需要能在移动端app进行展示的表格，特殊要求有要求表格表头、数据第一列进行固定。
-实现：参照 element-ui 实现，表头<thread>与 <tbody>进行滚动分离实现表头的固定。使用一个长度为一列宽度的表格在<tbody>横向滚动时显示并显示 box-shadow 阴影，实现数据第一列固定
-优化: 减少 dom 查询 复用查询节点。
-
-translate3d 可以开启硬件加速
+ translate3d 可以开启硬件加速
 为什么要用 translate3d 代替 overflow: scroll
 1. 之前部分浏览器不支持 overflow 。
 2. translate3d 可以开启硬件加速
 3. translate3d 比起 margin position 只会 reflow 不会 retain
 
-<!-- <div class="lb-reportTotal-table-fixed lb-statistical-table-fixed" ng-show="!selectFilter">
-        <table class="lb-table lb-reportTotal-table" style="min-width: 700px;position: relative;z-index: 5;">
-            <thead>
-                <tr>
-                    <th class="lb-table__cell" ng-repeat="head in tableHeadList" colspan="1" rowspan="1">
-                        <span class="lb-table_cell-span" ng-style="{ 'width': head.width ? head.width : '100px' }"
-                            ng-click="tableHeadSpanClickHandle($event, $index, head)">
-                            <span>{{head.label}}</span>
-                            <span ng-if="$index === 0" data-iconType="dropdowmicon"
-                                class="lb-reportTotal-table-dropdownicon">
-                                <i data-iconType="dropdowmicon" class="icon ion-arrow-down-b"
-                                    ng-class="{ 'ion-arrow-right-b': dropdownActive }"
-                                    ng-style="{ 'color' : dropdownSortAciton ? '#00a3f0' : '' }"></i>
-                            </span>
-                            <span ng-if="$index !== 0" data-iconType="sortIcon" class="lb-reportTotal-table-sortIcon">
-                                <i class="icon ion-arrow-up-b" data-iconType="sortIcon" style="top: -4px;"
-                                    ng-style="getColomnSortStyle('asc',$index)"></i>
-                                <i class="icon ion-arrow-down-b" data-iconType="sortIcon" style="top: 2px"
-                                    ng-style="getColomnSortStyle('desc',$index)"></i>
-                            </span>
+```html
+<div class="lb-reportTotal-table-fixed lb-statistical-table-fixed" ng-show="!selectFilter">
+    <table class="lb-table lb-reportTotal-table" style="min-width: 700px;position: relative;z-index: 5;">
+        <thead>
+            <tr>
+                <th class="lb-table__cell" ng-repeat="head in tableHeadList" colspan="1" rowspan="1">
+                    <span class="lb-table_cell-span" ng-style="{ 'width': head.width ? head.width : '100px' }"
+                        ng-click="tableHeadSpanClickHandle($event, $index, head)">
+                        <span>{{head.label}}</span>
+                        <span ng-if="$index === 0" data-iconType="dropdowmicon"
+                            class="lb-reportTotal-table-dropdownicon">
+                            <i data-iconType="dropdowmicon" class="icon ion-arrow-down-b"
+                                ng-class="{ 'ion-arrow-right-b': dropdownActive }"
+                                ng-style="{ 'color' : dropdownSortAciton ? '#00a3f0' : '' }"></i>
                         </span>
-                    </th>
-                </tr>
-            </thead>
-        </table>
-        <table class="lb-table lb-reportTotal-table lb-statistical-table-body" id="lb-reportTotal-table-fixed-tbody"
-            style="position: relative;z-index: 4;min-width: 700;">
-            <tbody>
-                <tr ng-repeat="sale in salesList" ng-init="outerIndex=$index">
-                    <td ng-repeat="head in tableHeadList" class="lb-table__cell" rowspan="1" colspan="1">
-                        <span class="lb-table_cell-span"
-                            ng-style="{ 'width': head.width ? head.width : '100px' }">
-                            <span ng-if="head.type === 'normal'">{{sale[head.value] || 0}}</span>
-                            <span ng-if="head.type === 'date'">{{getTableCellTime(sale[head.value])}}</span>
+                        <span ng-if="$index !== 0" data-iconType="sortIcon" class="lb-reportTotal-table-sortIcon">
+                            <i class="icon ion-arrow-up-b" data-iconType="sortIcon" style="top: -4px;"
+                                ng-style="getColomnSortStyle('asc',$index)"></i>
+                            <i class="icon ion-arrow-down-b" data-iconType="sortIcon" style="top: 2px"
+                                ng-style="getColomnSortStyle('desc',$index)"></i>
                         </span>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div> -->
-
+                    </span>
+                </th>
+            </tr>
+        </thead>
+    </table>
+    <table class="lb-table lb-reportTotal-table lb-statistical-table-body" id="lb-reportTotal-table-fixed-tbody"
+        style="position: relative;z-index: 4;min-width: 700;">
+        <tbody>
+            <tr ng-repeat="sale in salesList" ng-init="outerIndex=$index">
+                <td ng-repeat="head in tableHeadList" class="lb-table__cell" rowspan="1" colspan="1">
+                    <span class="lb-table_cell-span"
+                        ng-style="{ 'width': head.width ? head.width : '100px' }">
+                        <span ng-if="head.type === 'normal'">{{sale[head.value] || 0}}</span>
+                        <span ng-if="head.type === 'date'">{{getTableCellTime(sale[head.value])}}</span>
+                    </span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+```
 
 $scope.allSaler.unshift({val: 0, text: '未归属'});
 
@@ -394,4 +398,24 @@ $scope.allSaler.unshift({val: 0, text: '未归属'});
 
 4. 明确开发思路开发顺序。
 
-5. 开始开发。
+5. 开始开发。将 tb 任务移动到开发中。
+
+
+
+# angularjs 的特性
+
+
+# 场景
+- js 如何判断图片的大小
+
+- webapp 如何将图片缓存在本地
+
+
+```js
+// 解决 vue 项目调试不方便问题
+const index = this.currentUrl.indexOf('#');
+if (process.env.NODE_ENV === 'development' && index !== -1) {
+    window.open("http://localhost:63342/" + this.currentUrl.slice(index), '_self');
+    return;
+}
+```
