@@ -1,4 +1,5 @@
 \\172.16.4.192\it_software
+\\172.16.10.4\共享测试包\袁波分支-秦丝进销存
 
 qinsiyb
 
@@ -14,7 +15,7 @@ xiaojiuzi123
 进销存
 免费版账号：
 17771779999  hh123456
-16638939915  czq123456
+16638939915  czq12345633
 
 15369462534
 Qinsi1234.
@@ -76,7 +77,6 @@ getCompressPicture
 
 ```
 
-\\172.16.10.4\共享测试包\陈泽锋分支-秦丝进销存
 
 ```js
 // 多图分享
@@ -419,3 +419,104 @@ if (process.env.NODE_ENV === 'development' && index !== -1) {
     return;
 }
 ```
+
+2021/12/28  
+库位设置完以后刷新商品列表
+
+2021/12/29  
+pc 库位开发
+采购单附件提升质量
+
+-生意通app
+
+2021/1/7
+为 gis-vue 引入友盟埋点
+
+2022/1/14
+修复生意通app多图分享bug
+修复进销存app首页跳转无效bug
+进销存Pc库位迁移
+2022/1/15
+进销存生意通app库位UI优化
+进销存PC库位迁移
+2022/1/18
+进销存app、生意通app库位查询分页,商品详情显示维度bug修复
+
+2022/1/22
+进销存、生意通app
+noticebirthday 分支修复
+营销中设置了短信在生日当天定时发送，但是有一些的却没有发送。
+
+待移入release
+
+<table>
+    <tr>
+        <td>日期</td>
+        <td>功能</td>
+        <td>分支名</td>
+        <td>是否合并</td>
+        <td>端口</td>
+    </tr>
+    <tr>
+        <td>2022/1/22</td>
+        <td>营销中设置了短信在生日当天定时发送，但是有一些的却没有发送。</td>
+        <td>noticebirthday</td>
+        <td>1</td>
+        <td>进销存、生意通app</td>
+    </tr>
+    <tr>
+        <td>2022/1/22</td>
+        <td>侧边栏图标删除</td>
+        <td>delicon</td>
+        <td>1</td>
+        <td>生意通app</td>
+    </tr>
+    <tr>
+        <td>2022/1/22</td>
+        <td>单据价格同步</td>
+        <td>syncpurchase</td>
+        <td>1</td>
+        <td>进销存app</td>
+    </tr>
+    <tr>
+        <td>2022/2/11</td>
+        <td>进销存app用户配置页面，提示语优化</td>
+        <td>usersetting</td>
+        <td>1</td>
+        <td>进销存app</td>
+    </tr>
+    <tr>
+        <td>2022/2/11</td>
+        <td>Ipad登录进销存一直在启动页面卡住</td>
+        <td>localstorageOversize</td>
+        <td>2</td>
+        <td>进销存app</td>
+    </tr>
+    <tr>
+        <td>2022/2/11</td>
+        <td>没有销售统计权限时，在商品详情页拿货统计图标指向了库存量tab（DEV-18454
+
+
+
+）</td>
+        <td>scantips</td>
+        <td>2</td>
+        <td>进销存app</td>
+    </tr>
+    <tr>
+        <td>2022/2/11</td>
+        <td></td>
+        <td></td>
+        <td>2</td>
+        <td>进销存app</td>
+    </tr>
+</table>
+
+
+
+https://gitlab.app.qinsilk.com/qinsilk/qinsilkApp/merge_requests/4417
+
+【fix】Ipad登录进销存一直在启动页面卡住;防止localstorage超过5m时引起程序中断;
+
+https://gitlab.app.qinsilk.com/qinsilk/qinsilkApp/merge_requests/4418  
+【fix】没有销售统计权限时，在商品详情页拿货统计图标指向了库存量tab
