@@ -1,4 +1,4 @@
-\\172.16.4.192\it_software
+\\172.16.4.192\it_software  
 \\172.16.10.4\共享测试包\袁波分支-秦丝进销存
 
 qinsiyb
@@ -495,18 +495,43 @@ noticebirthday 分支修复
     <tr>
         <td>2022/2/11</td>
         <td>没有销售统计权限时，在商品详情页拿货统计图标指向了库存量tab（DEV-18454
-
-
-
 ）</td>
         <td>scantips</td>
         <td>2</td>
         <td>进销存app</td>
     </tr>
     <tr>
-        <td>2022/2/11</td>
-        <td></td>
-        <td></td>
+        <td>2022/2/12</td>
+        <td>App登录页行为和结果埋点</td>
+        <td>yuanbo-loginpagesetlog</td>
+        <td>1</td>
+        <td>进销存app</td>
+    </tr>
+    <tr>
+        <td>2022/2/14</td>
+        <td>生意通用户反馈海报生产卡住</td>
+        <td>yuanbo-haibao</td>
+        <td>1</td>
+        <td>生意通app</td>
+    </tr>
+    <tr>
+        <td>2022/2/18</td>
+        <td>菜单搜索去重</td>
+        <td>yuanbo-searchrepeat</td>
+        <td>2</td>
+        <td>进销存app</td>
+    </tr>
+    <tr>
+        <td>2022/2/19</td>
+        <td>批量改价</td>
+        <td>yuanbo-</td>
+        <td>2</td>
+        <td>进销存app</td>
+    </tr>
+    <tr>
+        <td>2022/2/19</td>
+        <td>批量改价</td>
+        <td>yuanbo-</td>
         <td>2</td>
         <td>进销存app</td>
     </tr>
