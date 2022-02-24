@@ -535,13 +535,11 @@ noticebirthday 分支修复
         <td>2</td>
         <td>进销存app</td>
     </tr>
+    <tr>
+        <td>2022/2/24</td>
+        <td>管理首页中“扫码入库”和“供应商管理”无法移动</td>
+        <td>yuanbo-</td>
+        <td>1</td>
+        <td>进销存app</td>
+    </tr>
 </table>
-
-
-
-https://gitlab.app.qinsilk.com/qinsilk/qinsilkApp/merge_requests/4417
-
-【fix】Ipad登录进销存一直在启动页面卡住;防止localstorage超过5m时引起程序中断;
-
-https://gitlab.app.qinsilk.com/qinsilk/qinsilkApp/merge_requests/4418  
-【fix】没有销售统计权限时，在商品详情页拿货统计图标指向了库存量tab
