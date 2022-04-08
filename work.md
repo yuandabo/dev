@@ -530,16 +530,51 @@ noticebirthday 分支修复
     </tr>
     <tr>
         <td>2022/2/19</td>
-        <td>批量改价</td>
-        <td>yuanbo-</td>
-        <td>2</td>
-        <td>进销存app</td>
-    </tr>
-    <tr>
-        <td>2022/2/24</td>
-        <td>管理首页中“扫码入库”和“供应商管理”无法移动</td>
+        <td>邀请有礼试用卡功能的新增关键埋点</td>
         <td>yuanbo-</td>
         <td>1</td>
         <td>进销存app</td>
     </tr>
+    <tr>
+        <td>2022/2/19</td>
+        <td>邀请试用卡注册时，获取验证码后没有显示倒计时</td>
+        <td>yuanbo-fixbugNoCount</td>
+        <td>1</td>
+        <td>进销存app</td>
+    </tr>
+    <tr>
+        <td>2022/2/19</td>
+        <td>快速上手专属顾问二维码展示异常</td>
+        <td>yuanbo-fixbugNoCount</td>
+        <td>1</td>
+        <td>进销存app</td>
+    </tr>
+    <tr>
+        <td>2022/2/19</td>
+        <td>采购单以图片方式分享</td>
+        <td></td>
+        <td>1</td>
+        <td>进销存app</td>
+    </tr>
 </table>
+
+
+
+https://gitlab.app.qinsilk.com/qinsilk/qinsilkApp/merge_requests/4417
+
+【fix】Ipad登录进销存一直在启动页面卡住;防止localstorage超过5m时引起程序中断;
+
+https://gitlab.app.qinsilk.com/qinsilk/qinsilkApp/merge_requests/4418  
+【fix】没有销售统计权限时，在商品详情页拿货统计图标指向了库存量tab
+
+
+https://gitlab.app.qinsilk.com/qinsilk/qinsilkApp/merge_requests/4459
+
+
+
+$scope.searchModel.clientTag = clientTag ?  clientTag : '';
+                $scope.searchModel.clientLabel = clientLabel ? clientLabel : '';    
+
+
+var clientTag = $stateParams.clientTag, clientLabel = $stateParams.clientLabel;
+
